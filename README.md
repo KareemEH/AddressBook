@@ -1,2 +1,2 @@
 # AddressBook
-https://img.shields.io/github/actions/workflow/status/KareemEH/AddressBook/maven-publish.yml
+[![Java CI](https://github.com/KareemEH/AddressBook/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/KareemEH/AddressBook/actions/workflows/maven-publish.yml)
