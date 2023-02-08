@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content= "text/html"; charset="UTF-8"/>
+  <title>AddressBook</title>
+</head>
+<body>
+
+<h1 style="text-align: center" th:text="'AddressBook Name: ' + ${addressBookModel.name}"></h1>
+
+<table>
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Number</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr th:each="BuddyInfoModel : ${buddyList}">
+    <td th:text="${BuddyInfoModel.id}"></td>
+    <td th:text="${BuddyInfoModel.name}"></td>
+    <td th:text="${BuddyInfoModel.number}"></td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
