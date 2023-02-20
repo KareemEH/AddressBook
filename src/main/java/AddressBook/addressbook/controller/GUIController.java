@@ -20,8 +20,14 @@ public class GUIController {
     @GetMapping("/")
     public String getAddressBook(Model model) {
         AddressBookModel addressBookModel = addressBookRepo.findByName("book1");
-        model.addAttribute("addressBookModel", addressBookModel);
-        model.addAttribute("buddyList", addressBookModel.getBuddyList());
-        return "addressBook";
+        if (addressBookModel == null) {
+            addressBookModel = new AddressBookModel("book1");
+            addressBookRepo.save(addressBookModel);
+        }
+        model.addAttribute("AddressBookModel", addressBookModel);
+        if (addressBookModel.getBuddyList() != null) {
+            model.addAttribute("buddyList", addressBookModel.getBuddyList());
+        }
+        return "AddressBook";
     }
 }
